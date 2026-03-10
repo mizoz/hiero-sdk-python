@@ -178,3 +178,11 @@ class TokenId:
             int: A hash of the TokenId instance.
         """
         return hash((self.shard, self.realm, self.num))
+
+    def __repr__(self) -> str:
+        """Returns a constructor-style string representation.
+
+        Returns:
+            str: A string representation in the format 'TokenId(shard, realm, num)'.
+        """
+        return f"TokenId({self.shard}, {self.realm}, {self.num})"

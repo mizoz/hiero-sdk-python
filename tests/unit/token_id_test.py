@@ -69,3 +69,11 @@ def test_validate_checksum_failure(mock_client):
 
     with pytest.raises(ValueError):
         token_id.validate_checksum(client)
+
+def test_repr():
+    """Should return constructor-style string representation."""
+    token_id = TokenId(shard=0, realm=0, num=1)
+    assert repr(token_id) == "TokenId(0, 0, 1)"
+
+    token_id2 = TokenId(shard=1, realm=2, num=3)
+    assert repr(token_id2) == "TokenId(1, 2, 3)"
